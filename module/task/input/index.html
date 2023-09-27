@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskInput</title>
+</head>
+<body>
+    <script src="./index.js" type="module"></script>
+    
+    <div>category:</div>
+    <div>
+    </div>
+    <div>memo:</div>
+    <textarea></textarea>
+    <div>limit:</div>
+    <div>
+        <input>
+        <input type="datetime-local">
+    </div>
+    <div>amount:</div>
+    <input type="number" min="1" step="1">
+    <div>start:</div>
+    <div>
+        <input>
+        <input type="datetime-local">
+    </div>
+    <div>done:</div>
+    <input type="checkbox">
+</body>
+<style>
+    body{
+        display: grid;
+        grid-template-columns:  80px 1fr;
+        row-gap: 10px;
+        font-family: Arial, sans-serif;
+    }
+    textarea{
+        height: 50px;
+        resize: none;
+    }
+</style>
+</html>

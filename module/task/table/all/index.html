@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskTable</title>
+</head>
+<body>
+    <script src="./index.js" type="module"></script>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Memo</th>
+                <th>Limit</th>
+                <th>Amount</th>
+                <th>Start</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+<style>
+    table{
+        width: 100%;
+    }
+    tr {
+        display: grid;
+        grid-template-columns: 3fr 2fr 5fr 3fr 2fr 3fr 2fr; /* 列の幅の割合を指定 */
+    }
+    tr:hover {
+        background-color: rgb(229, 246, 255);
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+        border-top: 2px solid #e0e0e0;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    td {
+        border-bottom: 1px solid #e0e0e0;
+        overflow:auto;
+    }
+</style>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createTask</title>
+</head>
+<body>
+    <script src="./index.js" type="module"></script>
+    <div id="categoryCards">
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+        <iframe src="../../module/task/card/category"></iframe>
+    </div>
+    <div id="createPopup" class="active">
+        <iframe id="taskCreateFrame" src="../../module/task/create"></iframe>
+        <button id="popupCloseButton">閉じる</button>
+    </div>
+</body>
+<style>
+body{
+    font-family: Arial, sans-serif;
+}
+#categoryCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+iframe {
+    width: 200px;
+    height: 200px;
+    border: none;
+    box-sizing: border-box;
+}
+#createPopup{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(116, 116, 116, 0.48);
+}
+#createPopup iframe{
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    width: 350px;
+    height: 330px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+#createPopup.active{
+    display: block;
+}
+</style>
+</html>

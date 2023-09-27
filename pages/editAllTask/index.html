@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allTasks</title>
+</head>
+<body>
+    <script src="./index.js" type="module"></script>
+
+    <iframe id="allTaskTable" src="../../module/task/table/all"></iframe>
+    <iframe id="selectedTaskEdit" src="../../module/task/edit"></iframe>
+
+</body>
+<style>
+body{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    font-family: Arial, sans-serif;
+}
+iframe {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    height: calc(100vh - 16px);
+}
+#inputTask{
+    background-color: yellow;
+}
+tr.active {
+    background-color: rgb(148, 218, 255);
+}
+</style>
+</html>

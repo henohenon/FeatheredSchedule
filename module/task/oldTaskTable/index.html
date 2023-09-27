@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allTask</title>
+</head>
+<body>
+    <script src="./index.js"></script>
+    <script src="../../db.js"></script>
+
+    <table id="taskTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Icon ID</th>
+                <th>Memo</th>
+                <th>Limit</th>
+                <th>Amount</th>
+                <th>Start</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div id="taskEdit">
+        <div>memo:</div>
+        <textarea id="memoEdit"></textarea>
+        <div>limit:</div>
+        <input type="datetime-local" id="limitEdit">
+        <div>amount:</div>
+        <input id="amountEdit">
+        <div>start:</div>
+        <input type="datetime-local" id="startEdit">
+        <div>done:</div>
+        <input type="checkbox" id="doneEdit">
+        <br>
+        <br>
+        <button onclick="updateSelected()">変更</button>
+        <button onclick="deleteSelected()">削除</button>
+    </div>
+</body>
+<style>
+    body{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        font-family: Arial, sans-serif;
+    }
+    #memoInput{
+        height: 100px;
+        width: 170px;
+        resize: none;
+    }
+    #taskEdit{
+        margin: auto;
+    }
+
+    tr {
+            display: grid;
+            grid-template-columns: 1fr 1fr 7fr 3fr 3fr 3fr 2fr; /* 列の幅の割合を指定 */
+        }
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+        border-top: 2px solid #e0e0e0;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    td {
+        border-bottom: 1px solid #e0e0e0;
+        overflow:auto;
+    }
+</style>
+</html>

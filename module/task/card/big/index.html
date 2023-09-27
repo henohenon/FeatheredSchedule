@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskInput</title>
+</head>
+<body>
+    <div class="infoBox">
+        <div class="categoryIconBox">
+            <h1>🖼</h1>
+        </div>
+        <div class="infoRightBox">
+            <div class="categoryTitleBox">
+                <h3>お絵描き</h3>
+            </div>
+            <div class="actionButtonsBox">
+                <div class="runningButton">
+                    <button>start</button>
+                </div>
+                <div class="doneButton">
+                    <button>done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="memoBox">
+        <div>ウツホ書きます</div>
+    </div>
+</body>
+<style>
+    body{
+        display: grid;
+        grid-template-rows:  100px 1fr;
+
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 10px;
+    }
+    .infoBox{
+        display: grid;
+        grid-template-columns:  100px 1fr;
+        height: 100px;
+        overflow: hidden;
+    }
+    .categoryIconBox h1{
+        margin: 0;
+        text-align: center;
+        font-size: 67px;
+    }
+    .infoRightBox{
+        display: grid;
+        grid-template-rows:  1fr 1fr;
+    }
+    .categoryTitleBox{
+        margin: auto;
+        margin-left: 0;
+    }
+    .categoryTitleBox h3{
+        margin: auto;
+        font-size: x-large;
+    }
+    .actionButtonsBox{
+        max-width: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    .memoBox{
+        font-size: larger;
+    }
+</style>
+</html>
