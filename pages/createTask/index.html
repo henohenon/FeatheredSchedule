@@ -8,20 +8,19 @@
 <body>
     <script src="./index.js" type="module"></script>
     <div id="categoryCards">
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
-        <iframe src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
+        <iframe class="categoryCard" src="../../module/task/card/category"></iframe>
     </div>
-    <div id="createPopup" class="active">
+    <div id="createBox">
         <iframe id="taskCreateFrame" src="../../module/task/create"></iframe>
-        <button id="popupCloseButton">閉じる</button>
     </div>
 </body>
 <style>
@@ -33,6 +32,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 iframe {
     width: 200px;
@@ -40,28 +41,15 @@ iframe {
     border: none;
     box-sizing: border-box;
 }
-#createPopup{
-    display: none;
-    position: absolute;
+#createBox{
+    width: 100%;
+    height: 100vh;
+    max-width: 500px;
+    margin: auto;
+}
+#taskCreateFrame{
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(116, 116, 116, 0.48);
-}
-#createPopup iframe{
-    margin: auto;
-    background-color: white;
-    border-radius: 10px;
-    width: 350px;
-    height: 330px;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    position: absolute;
-}
-#createPopup.active{
-    display: block;
 }
 </style>
 </html>

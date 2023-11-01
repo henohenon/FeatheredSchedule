@@ -11,6 +11,18 @@ window.onload = function () {
       );
     }
   });
+  const deleteButton = document.getElementById("deleteTaskButton");
+  deleteButton.addEventListener("click", () => {
+    if (deleteButton !== null) {
+      window.parent.postMessage(
+        {
+          action: "deleteTask",
+          value: edittingId,
+        },
+        myOrigin
+      );
+    }
+  });
 };
 
 let edittingId = null;

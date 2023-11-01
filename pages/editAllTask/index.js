@@ -96,7 +96,15 @@ window.addEventListener("message", function (event) {
     case "editTask": {
       console.log(event.data.value);
       worker.port.postMessage({
-        action: "editTask",
+        action: "updateTask",
+        value: event.data.value,
+      });
+      break;
+    }
+    case "deleteTask": {
+      console.log(event.data.value);
+      worker.port.postMessage({
+        action: "archiveTask",
         value: event.data.value,
       });
       break;

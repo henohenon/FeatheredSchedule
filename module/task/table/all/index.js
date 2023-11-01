@@ -29,7 +29,7 @@ function createTaskTable(data) {
     const task = data[i];
     // 列の作成
     if (task.archive == 1) {
-      break;
+      continue;
     }
     const row = tbody.insertRow();
     // データ作成
