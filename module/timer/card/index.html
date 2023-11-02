@@ -29,12 +29,20 @@
             margin: 3px;
             height: 36px;
         }
+        #timeres{
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            justify-items: start;
+        }
     </style>
 </head>
 <body>
     <div id="cardBody">
         <h2 id="timerTitle">Title</h2>
-        <div id="timerText">00:00:00:00</div>
+        <div id="timeres">
+            <div id="todayText">00:00:00:00</div>
+            <div id="monthText">00:00:00:00</div>
+        </div>
     </div>
 </body>
 <script src="./index.js"></script>

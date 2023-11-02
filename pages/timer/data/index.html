@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimerData</title>
+    <link rel="stylesheet" type="text/css" href="../../../global.css">
+</head>
+
+<body>
+    <input type="text" id="downloadSpecifyYear" placeholder="年" value="2023">
+    <input type="text" id="downloadSpecifyMonth" placeholder="月" value="">
+    <button id="downloadButton">ダウンロード</button>
+    <!--
+    <br>
+    <input type="file" accept=".json">
+    <button>アップロード</button>
+    <br>
+    <input type="text" id="downloadSpecifyYear" placeholder="年" value="2023">
+    <input type="text" id="downloadSpecifyMonth" placeholder="月" value="">
+    <button id="downloadButton">削除</button>-->
+</body>
+<script type="module">
+    import {
+        getTimerDB,
+        addData,
+        putTime,
+        updateDataById,
+        getAllStoreData,
+        deleteDataById,
+        getDataById,
+        clearAllStoreData,
+    } from "../../../dbWrapper/timer/index.js";
+
+    const downloadButton = document.getElementById("downloadButton");
+    downloadButton.addEventListener("click", downloadSpecifyData);
+
+    let db = null;
+
+    async function downloadSpecifyData() {
+        if (!db) {
+            db = await getTimerDB();
+        }
+        const timerDatas = await getAllStoreData(db, "timeres");
+
+        const specifyYear = document.getElementById("downloadSpecifyYear");
+        const specifyMonth = document.getElementById("downloadSpecifyMonth");
+        const filteredData = filterTimesByYearMonth(timerDatas, specifyYear.value, specifyMonth.value);
+
+        downloadJSON(filteredData, "fetheredTimer-" + specifyYear.value + "-" + specifyMonth.value + ".json")
+    }
+
+
+
+    function filterTimesByYearMonth(data, year, month) {
+        const targetDate = `${year}-${month.toString().padStart(2, '0')}-`;
+        return data.map(item => {
+            const filteredTimes = {};
+            for (let date in item.times) {
+                if (date.startsWith(targetDate)) {
+                    filteredTimes[date] = item.times[date];
+                }
+            }
+            return {
+                ...item,
+                times: filteredTimes
+            };
+        });
+    }
+
+
+    function downloadJSON(jsonObj, filename = 'data.json') {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonObj));
+        const a = document.createElement('a');
+        a.href = dataStr;
+        a.download = filename;
+        a.click();
+    }
+</script>
+
+</html>
